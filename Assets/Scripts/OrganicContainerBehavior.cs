@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class CanContainer : MonoBehaviour
+public class OrganicContainerBehavior : MonoBehaviour
 {
     private AudioSource audioSource;
-    [SerializeField] private AudioClip canSound;
-    [SerializeField] private AudioClip nonCanSound;
+    [SerializeField] private AudioClip organicSound;
+    [SerializeField] private AudioClip nonOrganicSound;
 
     private void Start()
     {
@@ -13,18 +13,18 @@ public class CanContainer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        bool isCan = collision.gameObject.CompareTag("Can");
+        bool isCan = collision.gameObject.CompareTag("Organic");
 
         if (isCan)
         {
-            Debug.Log("Can entered the container.");
+            Debug.Log("Organic entered the container.");
             Destroy(collision.gameObject);
-            PlayClip(canSound);
+            PlayClip(organicSound);
         }
         else
         {
-            Debug.Log("Non-can object entered the container.");
-            PlayClip(nonCanSound);
+            Debug.Log("Non-organic object entered the container.");
+            PlayClip(nonOrganicSound);
         }
     }
 
