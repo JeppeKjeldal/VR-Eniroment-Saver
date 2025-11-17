@@ -5795,8 +5795,8 @@ GameObject:
   - component: {fileID: 762898724}
   - component: {fileID: 762898723}
   - component: {fileID: 762898722}
-  - component: {fileID: 762898725}
   - component: {fileID: 762898726}
+  - component: {fileID: 762898727}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Can container
@@ -5896,20 +5896,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762898720}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &762898725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762898720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3007ed0b1f828f43bbbf6b564807d46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  canSound: {fileID: 8300000, guid: 0b365945be99ac249b283c137224cc73, type: 3}
-  nonCanSound: {fileID: 8300000, guid: 64ee6a1bc08f21e46b1ef92bf21cc766, type: 3}
 --- !u!82 &762898726
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6007,6 +5993,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &762898727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762898720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482a656f7debd414893e6cb18096e744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CanContainer
+  correctSound: {fileID: 8300000, guid: 0b365945be99ac249b283c137224cc73, type: 3}
+  wrongSound: {fileID: 8300000, guid: 64ee6a1bc08f21e46b1ef92bf21cc766, type: 3}
 --- !u!1 &770118516
 GameObject:
   m_ObjectHideFlags: 0
@@ -10659,8 +10659,8 @@ GameObject:
   - component: {fileID: 1813558348}
   - component: {fileID: 1813558347}
   - component: {fileID: 1813558346}
-  - component: {fileID: 1813558349}
   - component: {fileID: 1813558350}
+  - component: {fileID: 1813558351}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Organic Container
@@ -10760,20 +10760,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813558344}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1813558349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813558344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e3555eb0abaa341a9c76d9bf4a51fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  organicSound: {fileID: 8300000, guid: 0b365945be99ac249b283c137224cc73, type: 3}
-  nonOrganicSound: {fileID: 8300000, guid: 64ee6a1bc08f21e46b1ef92bf21cc766, type: 3}
 --- !u!82 &1813558350
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10871,6 +10857,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1813558351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813558344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d64b22276989ee4b859b8f23faee331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OrganicContainer
+  correctSound: {fileID: 8300000, guid: 0b365945be99ac249b283c137224cc73, type: 3}
+  wrongSound: {fileID: 8300000, guid: 64ee6a1bc08f21e46b1ef92bf21cc766, type: 3}
 --- !u!4 &1851969789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4452072441074210, guid: 3eccded1580624b43a8cce5cfb1e486a, type: 3}
@@ -12297,8 +12297,8 @@ GameObject:
   - component: {fileID: 2130344323}
   - component: {fileID: 2130344322}
   - component: {fileID: 2130344321}
-  - component: {fileID: 2130344324}
   - component: {fileID: 2130344325}
+  - component: {fileID: 2130344326}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Bottle Container
@@ -12398,20 +12398,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130344319}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2130344324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130344319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7f6fbe1e253c614ba1a7d70da73f14a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  bottleSound: {fileID: 8300000, guid: 0b365945be99ac249b283c137224cc73, type: 3}
-  nonBottleSound: {fileID: 8300000, guid: 64ee6a1bc08f21e46b1ef92bf21cc766, type: 3}
 --- !u!82 &2130344325
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12509,6 +12495,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2130344326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130344319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d17606c058f38d4883f81e55af2a674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BottleContainer
+  correctSound: {fileID: 8300000, guid: 0b365945be99ac249b283c137224cc73, type: 3}
+  wrongSound: {fileID: 8300000, guid: 64ee6a1bc08f21e46b1ef92bf21cc766, type: 3}
 --- !u!1001 &2140931286
 PrefabInstance:
   m_ObjectHideFlags: 0
