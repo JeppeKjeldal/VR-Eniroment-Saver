@@ -33,6 +33,7 @@ public abstract class ContainerBehavior : MonoBehaviour
     {
         Destroy(collision.gameObject);
         PlayClip(correctSound);
+
     }
 
     protected virtual void HandleWrongObject()
