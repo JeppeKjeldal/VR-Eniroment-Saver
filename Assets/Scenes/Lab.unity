@@ -377,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6200,6 +6200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233004b1a4b379f458af5fd796948033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalReturn
+  animalPrefab: {fileID: 1539343555}
 --- !u!4 &829754455
 Transform:
   m_ObjectHideFlags: 0
@@ -9204,6 +9205,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514681196}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1539343555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8130560282236414093, guid: 8d8fb26dd6a666247b80ad25ad1e316b, type: 3}
+  m_PrefabInstance: {fileID: 80658655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1542958388
 GameObject:
   m_ObjectHideFlags: 0
