@@ -33,7 +33,7 @@ public abstract class ContainerBehavior : MonoBehaviour
     {
         Destroy(collision.gameObject);
         PlayClip(correctSound);
-
+        EnviromentProgress.Instance.AddTrashCollectedToTotalAmount(1);
     }
 
     protected virtual void HandleWrongObject()

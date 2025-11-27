@@ -2,18 +2,16 @@ using UnityEngine;
 
 public class AnimalReturn : MonoBehaviour
 {
-    private void OnEnable()
+    private void Start()
     {
-        GetComponent<EnviromentProgress>().onEnviromentStateChanged += FirstAnimalsReturn;
+        if (EnviromentProgress.Instance != null)
+            EnviromentProgress.Instance.onEnviromentStateChanged += FirstAnimalsReturn;
+        else
+            Debug.LogWarning("EnviromentProgress.Instance is null!");
     }
 
-    private void OnDisable()
+    private void FirstAnimalsReturn()
     {
-        GetComponent<EnviromentProgress>().onEnviromentStateChanged -= FirstAnimalsReturn;
-    }
-
-    private void FirstAnimalsReturn() 
-    {
-        //Do Shit and instantiate
+        Debug.Log("First animals are returning to the cleaned environment!");
     }
 }

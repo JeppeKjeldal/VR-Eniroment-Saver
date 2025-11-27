@@ -16,21 +16,13 @@ public class EnviromentProgress : MonoBehaviour
 
     private int trashCollected = 0;
 
-    private static EnviromentProgress instance = null;
+    public static EnviromentProgress Instance { get; private set; }
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
-    
+
     public void AddTrashCollectedToTotalAmount(int amount)
     {
         trashCollected += amount;
@@ -41,21 +33,27 @@ public class EnviromentProgress : MonoBehaviour
     {
         EnviromentState newState = currentState;
 
-        if (trashCollected >= 1)
+        if (trashCollected >= 3)
         {
-            newState = EnviromentState.Polluted;
+            newState = EnviromentState.Clean;
             Debug.Log(currentState);
+            Debug.Log(trashCollected);
         }
+
         else if (trashCollected >= 2)
         {
             newState = EnviromentState.SlightlyPolluted;
             Debug.Log(currentState);
+            Debug.Log(trashCollected);
         }
-        else if (trashCollected >= 3)
+
+        else if (trashCollected >= 1)
         {
-            newState = EnviromentState.Clean;
+            newState = EnviromentState.Polluted;
             Debug.Log(currentState);
+            Debug.Log(trashCollected);
         }
+
 
         if (newState != currentState)
         {
