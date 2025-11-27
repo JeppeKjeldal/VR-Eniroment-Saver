@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class AnimalReturn : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnEnable()
     {
-        
+        GetComponent<EnviromentProgress>().onEnviromentStateChanged += FirstAnimalsReturn;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        GetComponent<EnviromentProgress>().onEnviromentStateChanged -= FirstAnimalsReturn;
+    }
+
+    private void FirstAnimalsReturn() 
+    {
+        //Do Shit and instantiate
     }
 }

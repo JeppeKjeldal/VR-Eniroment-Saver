@@ -12,7 +12,7 @@ public class EnviromentProgress : MonoBehaviour
     }
     public EnviromentState currentState;
 
-    public event Action<EnviromentState> OnEnviromentStateChanged;
+    public event Action onEnviromentStateChanged;
 
     private int trashCollected = 0;
 
@@ -34,7 +34,7 @@ public class EnviromentProgress : MonoBehaviour
     public void AddTrashCollectedToTotalAmount(int amount)
     {
         trashCollected += amount;
-        //Tjek state
+        EvaluateEnviromentState();
     }
 
     private void EvaluateEnviromentState()
@@ -57,7 +57,7 @@ public class EnviromentProgress : MonoBehaviour
         if (newState != currentState)
         {
             currentState = newState;
-            OnEnviromentStateChanged?.Invoke(newState);
+            onEnviromentStateChanged();
         }
     }
 }
