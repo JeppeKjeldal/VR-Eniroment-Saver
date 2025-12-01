@@ -13,6 +13,8 @@ public class PlantHealing : MonoBehaviour
     private float targetScale = 1f;
     private float growDuration = 10f;
 
+    [SerializeField] private AudioClip growClip;
+
     private void OnEnable()
     {
         if (EnviromentProgress.Instance != null)
@@ -38,7 +40,7 @@ public class PlantHealing : MonoBehaviour
     {
         Debug.Log("PlantHealing observer received state update!");
 
-        if (plantsToGrow.Count != 0)
+        if (plantsToGrow.Count > 0)
         {
             for (int i = 0; i < plantsToGrowPerState; i++)
             {
@@ -46,13 +48,11 @@ public class PlantHealing : MonoBehaviour
                 GameObject plantToGrow = plantsToGrow[randomIndex];
                 plantsToGrow.RemoveAt(randomIndex);
 
+                plantToGrow.SetActive(true);
+
                 StartCoroutine(GrowthCoroutine(plantToGrow));
                 plantsAlreadyGrown.Add(plantToGrow);
             }
-        }
-        else
-        {
-            return;
         }
     }
 
@@ -61,13 +61,18 @@ public class PlantHealing : MonoBehaviour
         float elapsedTime = 0f;
         Vector3 initialScale = Vector3.one * startScale;
         Vector3 finalScale = Vector3.one * targetScale;
+
         plant.transform.localScale = initialScale;
+
+        AudioSource.PlayClipAtPoint(growClip, plant.transform.position);
+
         while (elapsedTime < growDuration)
         {
             plant.transform.localScale = Vector3.Lerp(initialScale, finalScale, (elapsedTime / growDuration));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
         plant.transform.localScale = finalScale;
     }
 }

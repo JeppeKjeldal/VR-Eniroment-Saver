@@ -1751,85 +1751,6 @@ Transform:
   - {fileID: 1435733776}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &269850636
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1399273871}
-    m_Modifications:
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0009999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0009999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8967284356562149438, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-      propertyPath: m_Name
-      value: PalmTree
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
---- !u!4 &269850637 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8591145360636623492, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-  m_PrefabInstance: {fileID: 269850636}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &269850638 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8967284356562149438, guid: 6a192163653904540ba41ae25dd099b1, type: 3}
-  m_PrefabInstance: {fileID: 269850636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &282246306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2666,15 +2587,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6276200499137207912, guid: 83255638da8ff894dbcea2219bfc84e9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0001
+      value: 0.010000001
       objectReference: {fileID: 0}
     - target: {fileID: 6276200499137207912, guid: 83255638da8ff894dbcea2219bfc84e9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0009999999
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6276200499137207912, guid: 83255638da8ff894dbcea2219bfc84e9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0009999999
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6276200499137207912, guid: 83255638da8ff894dbcea2219bfc84e9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2723,6 +2644,10 @@ PrefabInstance:
     - target: {fileID: 6652480434414519506, guid: 83255638da8ff894dbcea2219bfc84e9, type: 3}
       propertyPath: m_Name
       value: PalmTree3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652480434414519506, guid: 83255638da8ff894dbcea2219bfc84e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5159,7 +5084,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: bb7c63660d447354da762fb7a2bf2e42, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.624
   m_Pitch: 1
   Loop: 1
@@ -6180,7 +6105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4642753971e264fbb20044fa231cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayVideo
-  playAtStart: 1
+  playAtStart: 0
   videoMaterial: {fileID: 515321998}
   videoClips:
   - {fileID: 32900000, guid: 3aa3f676fef73054c8e9b49012feb40c, type: 3}
@@ -7790,7 +7715,6 @@ Transform:
   m_Children:
   - {fileID: 1655082902}
   - {fileID: 419087208}
-  - {fileID: 269850637}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1435733776 stripped
@@ -8354,15 +8278,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5883055712011646300, guid: 06b6552bd188a534db7df1a9c901d34f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5883055712011646300, guid: 06b6552bd188a534db7df1a9c901d34f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5883055712011646300, guid: 06b6552bd188a534db7df1a9c901d34f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5883055712011646300, guid: 06b6552bd188a534db7df1a9c901d34f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8411,6 +8335,14 @@ PrefabInstance:
     - target: {fileID: 6552456723980431334, guid: 06b6552bd188a534db7df1a9c901d34f, type: 3}
       propertyPath: m_Name
       value: Bush
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552456723980431334, guid: 06b6552bd188a534db7df1a9c901d34f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668602331933317056, guid: 06b6552bd188a534db7df1a9c901d34f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9632,7 +9564,7 @@ MonoBehaviour:
   plantsToGrow:
   - {fileID: 1655082903}
   - {fileID: 419087209}
-  - {fileID: 269850638}
+  growClip: {fileID: 8300000, guid: 2ce64e63666fe1c44b900f122292348b, type: 3}
 --- !u!4 &1871584792
 Transform:
   m_ObjectHideFlags: 0
