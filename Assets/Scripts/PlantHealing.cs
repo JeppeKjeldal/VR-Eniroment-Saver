@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class PlantHealing : MonoBehaviour
 
     private float startScale = 0.1f;
     private float targetScale = 1f;
-    private float growDuration = 2f;
+    private float growDuration = 10f;
 
     private void OnEnable()
     {
@@ -55,8 +56,18 @@ public class PlantHealing : MonoBehaviour
         }
     }
 
-    private string GrowthCoroutine(GameObject plantToGrow)
+    IEnumerator GrowthCoroutine(GameObject plant)
     {
-        throw new System.NotImplementedException();
+        float elapsedTime = 0f;
+        Vector3 initialScale = Vector3.one * startScale;
+        Vector3 finalScale = Vector3.one * targetScale;
+        plant.transform.localScale = initialScale;
+        while (elapsedTime < growDuration)
+        {
+            plant.transform.localScale = Vector3.Lerp(initialScale, finalScale, (elapsedTime / growDuration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        plant.transform.localScale = finalScale;
     }
 }
