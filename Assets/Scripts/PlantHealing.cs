@@ -1,9 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlantHealing : MonoBehaviour
 {
-    private GameObject[] plantsToGrow;
-    private GameObject[] plantsAlreadyGrown;
+    [SerializeField] private List<GameObject> plantsToGrow;
+    private List<GameObject> plantsAlreadyGrown = new List<GameObject>();
+
+    private int plantsToGrowPerState = 2;
+
+    private float startScale = 0.1f;
+    private float targetScale = 1f;
+    private float growDuration = 2f;
 
     private void OnEnable()
     {
@@ -28,6 +35,28 @@ public class PlantHealing : MonoBehaviour
 
     private void GrowPlants()
     {
+        Debug.Log("PlantHealing observer received state update!");
 
+        if (plantsToGrow.Count != 0)
+        {
+            for (int i = 0; i < plantsToGrowPerState; i++)
+            {
+                int randomIndex = Random.Range(0, plantsToGrow.Count);
+                GameObject plantToGrow = plantsToGrow[randomIndex];
+                plantsToGrow.RemoveAt(randomIndex);
+
+                StartCoroutine(GrowthCoroutine(plantToGrow));
+                plantsAlreadyGrown.Add(plantToGrow);
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    private string GrowthCoroutine(GameObject plantToGrow)
+    {
+        throw new System.NotImplementedException();
     }
 }
