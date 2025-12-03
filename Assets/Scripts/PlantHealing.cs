@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlantHealing : MonoBehaviour
 {
     [SerializeField] private List<GameObject> plantsToGrow;
-    private List<GameObject> plantsAlreadyGrown = new List<GameObject>();
 
     private int plantsToGrowPerState = 2;
 
@@ -51,7 +50,6 @@ public class PlantHealing : MonoBehaviour
                 plantToGrow.SetActive(true);
 
                 StartCoroutine(GrowthCoroutine(plantToGrow));
-                plantsAlreadyGrown.Add(plantToGrow);
             }
         }
     }

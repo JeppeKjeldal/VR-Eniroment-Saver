@@ -10,6 +10,7 @@ public class EnviromentProgress : MonoBehaviour
         Polluted,
         HeavilyPolluted
     }
+
     public EnviromentState currentState;
 
     public event Action onEnviromentStateChanged;
