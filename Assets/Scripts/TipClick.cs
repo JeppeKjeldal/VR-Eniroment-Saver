@@ -22,10 +22,10 @@ public class TipClick : MonoBehaviour
 
     private void Update()
     {
-        float leftTarget = isClosed ? closedAngle : openAngle;
-        float rightTarget = isClosed ? -closedAngle : -openAngle;
+        float angle = isClosed ? closedAngle : openAngle;
 
-        leftTip.localRotation = Quaternion.Euler(0, 0, leftTarget);
-        rightTip.localRotation = Quaternion.Euler(0, 0, rightTarget);
+        // Flip the directions
+        leftTip.localRotation = Quaternion.Euler(0, 0, -angle);
+        rightTip.localRotation = Quaternion.Euler(0, 0, angle);
     }
 }
