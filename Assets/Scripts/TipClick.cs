@@ -10,9 +10,13 @@ public class TipClick : MonoBehaviour
 
     private bool isClosed = false;
 
+    [SerializeField] private AudioClip clickSound;
+    [SerializeField] private Transform soundLocation;
+
     public void OnGrab()
     {
         isClosed = true;
+        AudioSource.PlayClipAtPoint(clickSound, transform.position);
     }
 
     public void OnRelease()
