@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class AmbienceSoundscape : MonoBehaviour
 {
-    [Header("Audio Sources")]
     [SerializeField] private AudioSource ambientBaseLayer;
     [SerializeField] private AudioSource ambientAnimalsLayer;
     [SerializeField] private AudioSource ambientWeatherLayer;
 
-    [Header("Volumes per State")]
     [SerializeField] private float heavilyPollutedVolume = 0f;
     [SerializeField] private float pollutedVolume = 0.2f;
     [SerializeField] private float slightlyPollutedVolume = 0.5f;
