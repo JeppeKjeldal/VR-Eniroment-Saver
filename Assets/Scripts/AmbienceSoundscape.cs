@@ -2,13 +2,10 @@ using UnityEngine;
 
 public class AmbienceSoundscape : MonoBehaviour
 {
-    [Header("Audio Sources")]
     [SerializeField] private AudioSource ambientBaseLayer;
     [SerializeField] private AudioSource ambientAnimalsLayer;
     [SerializeField] private AudioSource ambientWeatherLayer;
-    [SerializeField] private AudioSource ambientMusicLayer;
 
-    [Header("Volumes per State")]
     [SerializeField] private float heavilyPollutedVolume = 0f;
     [SerializeField] private float pollutedVolume = 0.2f;
     [SerializeField] private float slightlyPollutedVolume = 0.5f;
@@ -37,6 +34,8 @@ public class AmbienceSoundscape : MonoBehaviour
 
     private void Start()
     {
+        UpdateAmbienceLayers();
+
         ambientBaseLayer.Play();
         ambientAnimalsLayer.Play();
         ambientWeatherLayer.Play();
@@ -55,12 +54,15 @@ public class AmbienceSoundscape : MonoBehaviour
             case EnviromentProgress.EnviromentState.Polluted:
                 SetLayerVolumes(pollutedVolume);
                 break;
+
             case EnviromentProgress.EnviromentState.SlightlyPolluted:
                 SetLayerVolumes(slightlyPollutedVolume);
                 break;
+
             case EnviromentProgress.EnviromentState.Clean:
                 SetLayerVolumes(cleanVolume);
                 break;
+
             default:
                 Debug.LogWarning("Unknown EnviromentState!");
                 break;
