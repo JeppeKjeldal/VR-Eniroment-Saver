@@ -6,8 +6,8 @@ public abstract class ContainerBehavior : MonoBehaviour
 
     [SerializeField] protected AudioClip correctSound;
     [SerializeField] protected AudioClip wrongSound;
+    [SerializeField] protected ParticleSystem correctEffect;
 
-    // Hvilket tag er korrekt for denne container?
     protected abstract string AcceptedTag { get; }
 
     protected virtual void Start()
@@ -32,6 +32,7 @@ public abstract class ContainerBehavior : MonoBehaviour
     protected virtual void HandleCorrectObject(Collision collision)
     {
         Destroy(collision.gameObject);
+        Instantiate(correctEffect, collision.contacts[0].point, Quaternion.identity);
         PlayClip(correctSound);
         EnviromentProgress.Instance.AddTrashCollectedToTotalAmount(1);
     }
