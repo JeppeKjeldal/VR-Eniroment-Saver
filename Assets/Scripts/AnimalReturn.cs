@@ -1,10 +1,13 @@
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class AnimalReturn : MonoBehaviour
 {
-    [SerializeField] private GameObject[] animals;
-    [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private List<GameObject> landAnimals;
+    [SerializeField] private List<Transform> landSpawnPoints;
+    [SerializeField] private List<GameObject> seaAnimals;
+    [SerializeField] private List<Transform> seaSpawnPoints;
 
     private void OnEnable()
     {
@@ -33,15 +36,24 @@ public class AnimalReturn : MonoBehaviour
 
         for (int i = 0; i < 2; i++)
         {
-            SpawnRandomAnimal();
+            SpawnRandomLandAnimal();
+            SpawnRandomSeaAnimal();
         }
     }
 
-    private void SpawnRandomAnimal()
+    private void SpawnRandomLandAnimal()
     {
-        int index = Random.Range(0, animals.Length);
-        int spawnIndex = Random.Range(0, spawnPoints.Length);
+        int animalIndex = Random.Range(0, landAnimals.Count);
+        int spawnPointIndex = Random.Range(0, landSpawnPoints.Count);
 
-        Instantiate(animals[index], spawnPoints[spawnIndex].position, Quaternion.identity);
+        Instantiate(landAnimals[animalIndex], landSpawnPoints[spawnPointIndex].position, Quaternion.identity);
+    }
+
+    private void SpawnRandomSeaAnimal()
+    {
+        int animalIndex = Random.Range(0, seaAnimals.Count);
+        int spawnPointIndex = Random.Range(0, seaSpawnPoints.Count);
+
+        Instantiate(seaAnimals[animalIndex], seaSpawnPoints[spawnPointIndex].position, Quaternion.identity);
     }
 }
