@@ -47,6 +47,8 @@ public class AnimalReturn : MonoBehaviour
         int spawnPointIndex = Random.Range(0, landSpawnPoints.Count);
 
         Instantiate(landAnimals[animalIndex], landSpawnPoints[spawnPointIndex].position, Quaternion.identity);
+
+        landSpawnPoints.RemoveAt(spawnPointIndex);
     }
 
     private void SpawnRandomSeaAnimal()
@@ -55,5 +57,7 @@ public class AnimalReturn : MonoBehaviour
         int spawnPointIndex = Random.Range(0, seaSpawnPoints.Count);
 
         Instantiate(seaAnimals[animalIndex], seaSpawnPoints[spawnPointIndex].position, Quaternion.identity);
+
+        seaSpawnPoints.RemoveAt(spawnPointIndex);
     }
 }

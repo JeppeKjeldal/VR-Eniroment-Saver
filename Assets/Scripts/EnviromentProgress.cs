@@ -34,21 +34,21 @@ public class EnviromentProgress : MonoBehaviour
     {
         EnviromentState newState = currentState;
 
-        if (trashCollected >= 3)
+        if (trashCollected >= 40)
         {
             newState = EnviromentState.Clean;
             Debug.Log(currentState);
             Debug.Log(trashCollected);
         }
 
-        else if (trashCollected >= 2)
+        else if (trashCollected >= 25)
         {
             newState = EnviromentState.SlightlyPolluted;
             Debug.Log(currentState);
             Debug.Log(trashCollected);
         }
 
-        else if (trashCollected >= 1)
+        else if (trashCollected >= 10)
         {
             newState = EnviromentState.Polluted;
             Debug.Log(currentState);
