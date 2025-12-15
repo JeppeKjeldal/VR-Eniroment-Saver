@@ -27,5 +27,10 @@ public class SmogVisibility : MonoBehaviour
     {
         var main = smogParticleSystem.main;
         main.maxParticles = Mathf.Max(0, main.maxParticles - particlesRemovedPerState);
+
+        if (main.maxParticles < 0)
+        {
+            main.maxParticles = 0;
+        }
     }
 }
