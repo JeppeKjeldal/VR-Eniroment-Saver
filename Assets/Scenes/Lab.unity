@@ -4057,7 +4057,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: bb7c63660d447354da762fb7a2bf2e42, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.624
   m_Pitch: 1
   Loop: 1
@@ -8487,8 +8487,9 @@ GameObject:
   - component: {fileID: 1346341790}
   - component: {fileID: 1346341789}
   - component: {fileID: 1346341788}
+  - component: {fileID: 1346341791}
   m_Layer: 0
-  m_Name: Fog Volume
+  m_Name: Smog Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8590,7 +8591,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -8657,7 +8658,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9849,8 +9850,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.034350947, g: 0.3490566, b: 0.018111428, a: 0}
-        key1: {r: 0.03529412, g: 0.34901962, b: 0.019607844, a: 1}
+        key0: {r: 0.113964036, g: 0.122641504, b: 0.120772086, a: 0}
+        key1: {r: 0.28123888, g: 0.3301887, b: 0.2787914, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -13312,6 +13313,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1346341791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346341787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d605c8166b695424fb45c7dbbbc2b411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  particlesRemovedPerState: 334
 --- !u!1 &1364601699
 GameObject:
   m_ObjectHideFlags: 0
