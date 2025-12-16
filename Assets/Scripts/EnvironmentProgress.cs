@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public class EnviromentProgress : MonoBehaviour
+public class EnvironmentProgress : MonoBehaviour
 {
-    public enum EnviromentState
+    public enum EnvironmentState
     {
         Clean,
         SlightlyPolluted,
@@ -11,13 +11,13 @@ public class EnviromentProgress : MonoBehaviour
         HeavilyPolluted
     }
 
-    public EnviromentState currentState;
+    public EnvironmentState currentState;
 
-    public event Action onEnviromentStateChanged;
+    public event Action onEnvironmentStateChanged;
 
     private int trashCollected = 0;
 
-    public static EnviromentProgress Instance { get; private set; }
+    public static EnvironmentProgress Instance { get; private set; }
 
     private void Awake()
     {
@@ -27,30 +27,30 @@ public class EnviromentProgress : MonoBehaviour
     public void AddTrashCollectedToTotalAmount(int amount)
     {
         trashCollected += amount;
-        EvaluateEnviromentState();
+        EvaluateEnvironmentState();
     }
 
-    private void EvaluateEnviromentState()
+    private void EvaluateEnvironmentState()
     {
-        EnviromentState newState = currentState;
+        EnvironmentState newState = currentState;
 
         if (trashCollected >= 40)
         {
-            newState = EnviromentState.Clean;
+            newState = EnvironmentState.Clean;
             Debug.Log(currentState);
             Debug.Log(trashCollected);
         }
 
         else if (trashCollected >= 25)
         {
-            newState = EnviromentState.SlightlyPolluted;
+            newState = EnvironmentState.SlightlyPolluted;
             Debug.Log(currentState);
             Debug.Log(trashCollected);
         }
 
         else if (trashCollected >= 10)
         {
-            newState = EnviromentState.Polluted;
+            newState = EnvironmentState.Polluted;
             Debug.Log(currentState);
             Debug.Log(trashCollected);
         }
@@ -59,7 +59,7 @@ public class EnviromentProgress : MonoBehaviour
         if (newState != currentState)
         {
             currentState = newState;
-            onEnviromentStateChanged();
+            onEnvironmentStateChanged();
         }
     }
 }

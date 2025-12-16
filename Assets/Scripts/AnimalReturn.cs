@@ -11,29 +11,26 @@ public class AnimalReturn : MonoBehaviour
 
     private void OnEnable()
     {
-        if (EnviromentProgress.Instance != null)
+        if (EnvironmentProgress.Instance != null)
         {
-            EnviromentProgress.Instance.onEnviromentStateChanged += HandleEnvironmentStateChanged;
-            Debug.Log("AnimalReturn observer listening!");
+            EnvironmentProgress.Instance.onEnvironmentStateChanged += HandleEnvironmentStateChanged;
         }
         else
         {
-            Debug.LogWarning("EnviromentProgress.Instance is null!");
+            Debug.LogWarning("EnvironmentProgress.Instance is null!");
         }
     }
 
     private void OnDisable()
     {
-        if (EnviromentProgress.Instance != null)
+        if (EnvironmentProgress.Instance != null)
         {
-            EnviromentProgress.Instance.onEnviromentStateChanged -= HandleEnvironmentStateChanged;
+            EnvironmentProgress.Instance.onEnvironmentStateChanged -= HandleEnvironmentStateChanged;
         }
     }
 
     private void HandleEnvironmentStateChanged()
     {
-        Debug.Log("AnimalReturn observer received state update!");
-
         for (int i = 0; i < 2; i++)
         {
             SpawnRandomLandAnimal();

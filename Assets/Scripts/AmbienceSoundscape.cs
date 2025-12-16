@@ -13,22 +13,21 @@ public class AmbienceSoundscape : MonoBehaviour
 
     private void OnEnable()
     {
-        if (EnviromentProgress.Instance != null)
+        if (EnvironmentProgress.Instance != null)
         {
-            EnviromentProgress.Instance.onEnviromentStateChanged += UpdateAmbienceLayers;
-            Debug.Log("AmbienceSoundscape observer listening!");
+            EnvironmentProgress.Instance.onEnvironmentStateChanged += UpdateAmbienceLayers;
         }
         else
         {
-            Debug.LogWarning("EnviromentProgress.Instance is null!");
+            Debug.LogWarning("EnvironmentProgress.Instance is null!");
         }
     }
 
     private void OnDisable()
     {
-        if (EnviromentProgress.Instance != null)
+        if (EnvironmentProgress.Instance != null)
         {
-            EnviromentProgress.Instance.onEnviromentStateChanged -= UpdateAmbienceLayers;
+            EnvironmentProgress.Instance.onEnvironmentStateChanged -= UpdateAmbienceLayers;
         }
     }
 
@@ -43,28 +42,26 @@ public class AmbienceSoundscape : MonoBehaviour
 
     private void UpdateAmbienceLayers()
     {
-        Debug.Log("AmbienceSoundscape observer received state update!");
-
-        switch (EnviromentProgress.Instance.currentState)
+        switch (EnvironmentProgress.Instance.currentState)
         {
-            case EnviromentProgress.EnviromentState.HeavilyPolluted:
+            case EnvironmentProgress.EnvironmentState.HeavilyPolluted:
                 SetLayerVolumes(heavilyPollutedVolume);
                 break;
 
-            case EnviromentProgress.EnviromentState.Polluted:
+            case EnvironmentProgress.EnvironmentState.Polluted:
                 SetLayerVolumes(pollutedVolume);
                 break;
 
-            case EnviromentProgress.EnviromentState.SlightlyPolluted:
+            case EnvironmentProgress.EnvironmentState.SlightlyPolluted:
                 SetLayerVolumes(slightlyPollutedVolume);
                 break;
 
-            case EnviromentProgress.EnviromentState.Clean:
+            case EnvironmentProgress.EnvironmentState.Clean:
                 SetLayerVolumes(cleanVolume);
                 break;
 
             default:
-                Debug.LogWarning("Unknown EnviromentState!");
+                Debug.LogWarning("Unknown EnvironmentState!");
                 break;
         }
     }

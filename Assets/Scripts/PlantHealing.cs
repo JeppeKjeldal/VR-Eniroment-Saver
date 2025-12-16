@@ -16,29 +16,26 @@ public class PlantHealing : MonoBehaviour
 
     private void OnEnable()
     {
-        if (EnviromentProgress.Instance != null)
+        if (EnvironmentProgress.Instance != null)
         {
-            EnviromentProgress.Instance.onEnviromentStateChanged += GrowPlants;
-            Debug.Log("PlantHealing observer listening!");
+            EnvironmentProgress.Instance.onEnvironmentStateChanged += GrowPlants;
         }
         else
         {
-            Debug.LogWarning("EnviromentProgress.Instance is null!");
+            Debug.LogWarning("EnvironmentProgress.Instance is null!");
         }
     }
 
     private void OnDisable()
     {
-        if (EnviromentProgress.Instance != null)
+        if (EnvironmentProgress.Instance != null)
         {
-            EnviromentProgress.Instance.onEnviromentStateChanged -= GrowPlants;
+            EnvironmentProgress.Instance.onEnvironmentStateChanged -= GrowPlants;
         }
     }
 
     private void GrowPlants()
     {
-        Debug.Log("PlantHealing observer received state update!");
-
         if (plantsToGrow.Count > 0)
         {
             for (int i = 0; i < plantsToGrowPerState; i++)

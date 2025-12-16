@@ -34,7 +34,8 @@ public abstract class ContainerBehavior : MonoBehaviour
         Destroy(collision.gameObject);
         Instantiate(correctEffect, collision.contacts[0].point, Quaternion.identity);
         PlayClip(correctSound);
-        EnviromentProgress.Instance.AddTrashCollectedToTotalAmount(1);
+        EnvironmentProgress.Instance.AddTrashCollectedToTotalAmount(1);
+        TrashScanner.Instance.CalculateYearsSaved(AcceptedTag);
     }
 
     protected virtual void HandleWrongObject()

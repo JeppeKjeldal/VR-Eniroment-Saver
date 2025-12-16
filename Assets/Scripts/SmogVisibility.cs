@@ -13,14 +13,14 @@ public class SmogVisibility : MonoBehaviour
 
     private void OnEnable()
     {
-        if (EnviromentProgress.Instance != null)
-            EnviromentProgress.Instance.onEnviromentStateChanged += ReduceAmountOfSmogOnStateChange;
+        if (EnvironmentProgress.Instance != null)
+            EnvironmentProgress.Instance.onEnvironmentStateChanged += ReduceAmountOfSmogOnStateChange;
     }
 
     private void OnDisable()
     {
-        if (EnviromentProgress.Instance != null)
-            EnviromentProgress.Instance.onEnviromentStateChanged -= ReduceAmountOfSmogOnStateChange;
+        if (EnvironmentProgress.Instance != null)
+            EnvironmentProgress.Instance.onEnvironmentStateChanged -= ReduceAmountOfSmogOnStateChange;
     }
 
     private void ReduceAmountOfSmogOnStateChange()
@@ -28,9 +28,9 @@ public class SmogVisibility : MonoBehaviour
         var main = smogParticleSystem.main;
         main.maxParticles = Mathf.Max(0, main.maxParticles - particlesRemovedPerState);
 
-        if (main.maxParticles < 0)
+        if (main.maxParticles <= 0)
         {
-            main.maxParticles = 0;
+            gameObject.SetActive(false);
         }
     }
 }
