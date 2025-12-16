@@ -11,6 +11,15 @@ public class AmbienceSoundscape : MonoBehaviour
     [SerializeField] private float slightlyPollutedVolume = 0.5f;
     [SerializeField] private float cleanVolume = 1f;
 
+    private void Start()
+    {
+        UpdateAmbienceLayers();
+
+        ambientBaseLayer.Play();
+        ambientAnimalsLayer.Play();
+        ambientWeatherLayer.Play();
+    }
+
     private void OnEnable()
     {
         if (EnvironmentProgress.Instance != null)
@@ -29,15 +38,6 @@ public class AmbienceSoundscape : MonoBehaviour
         {
             EnvironmentProgress.Instance.onEnvironmentStateChanged -= UpdateAmbienceLayers;
         }
-    }
-
-    private void Start()
-    {
-        UpdateAmbienceLayers();
-
-        ambientBaseLayer.Play();
-        ambientAnimalsLayer.Play();
-        ambientWeatherLayer.Play();
     }
 
     private void UpdateAmbienceLayers()
