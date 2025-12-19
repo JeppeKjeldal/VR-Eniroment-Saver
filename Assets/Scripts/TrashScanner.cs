@@ -14,6 +14,7 @@ public class TrashScanner : MonoBehaviour
     private float totalYearsSaved = 0;
 
     public TMP_Text yearsSavedText;
+    private int yearsSaved = 555;
 
     public static TrashScanner Instance { get; private set; }
 
@@ -27,6 +28,8 @@ public class TrashScanner : MonoBehaviour
         {
             allTrash.Add(child.gameObject);
         }
+
+        Debug.Log($"Total trash items found: {allTrash.Count}", this);
     }
 
     public void CalculateYearsSaved(string tag)
@@ -49,6 +52,6 @@ public class TrashScanner : MonoBehaviour
 
     private void UpdateYearsSavedUI()
     {
-        yearsSavedText.text = "Years Saved: " + totalYearsSaved.ToString();
+        yearsSavedText.text = totalYearsSaved.ToString();
     }
 }
