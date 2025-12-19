@@ -13,8 +13,7 @@ public class TrashScanner : MonoBehaviour
     private float glassBottleValueInYears = 4000;
     private float totalYearsSaved = 0;
 
-    public TMP_Text yearsSavedText;
-    private int yearsSaved = 555;
+    [SerializeField] private TMP_Text yearsSavedText;
 
     public static TrashScanner Instance { get; private set; }
 
@@ -52,6 +51,6 @@ public class TrashScanner : MonoBehaviour
 
     private void UpdateYearsSavedUI()
     {
-        yearsSavedText.text = totalYearsSaved.ToString();
+        yearsSavedText.text = "Antal år det ville tage at nebryde det skrald du har samlet: " + totalYearsSaved.ToString() + " år";
     }
 }
