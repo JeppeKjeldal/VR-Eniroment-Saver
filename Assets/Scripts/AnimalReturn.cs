@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AnimalReturn : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> landAnimals;
-    [SerializeField] private List<Transform> landSpawnPoints;
+    //[SerializeField] private List<GameObject> landAnimals;
+    //[SerializeField] private List<Transform> landSpawnPoints;
     [SerializeField] private List<GameObject> seaAnimals;
     [SerializeField] private List<Transform> seaSpawnPoints;
 
@@ -33,20 +33,20 @@ public class AnimalReturn : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
-            SpawnRandomLandAnimal();
+            //SpawnRandomLandAnimal();
             SpawnRandomSeaAnimal();
         }
     }
 
-    private void SpawnRandomLandAnimal()
-    {
-        int animalIndex = Random.Range(0, landAnimals.Count);
-        int spawnPointIndex = Random.Range(0, landSpawnPoints.Count);
+    //private void SpawnRandomLandAnimal()
+    //{
+    //    int animalIndex = Random.Range(0, landAnimals.Count);
+    //    int spawnPointIndex = Random.Range(0, landSpawnPoints.Count);
 
-        Instantiate(landAnimals[animalIndex], landSpawnPoints[spawnPointIndex].position, Quaternion.identity);
+    //    Instantiate(landAnimals[animalIndex], landSpawnPoints[spawnPointIndex].position, Quaternion.identity);
 
-        landSpawnPoints.RemoveAt(spawnPointIndex);
-    }
+    //    landSpawnPoints.RemoveAt(spawnPointIndex);
+    //}
 
     private void SpawnRandomSeaAnimal()
     {
